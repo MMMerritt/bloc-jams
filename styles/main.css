@@ -55,3 +55,11 @@ html {
     .column.fourth { width: 25%; }
     .column.flow-opposite { float: right; }
 }
+
+.clearfix::after {
+   content: ".";
+   visibility: hidden;
+   display: block;
+   height: 0;
+   clear: both;
+}
