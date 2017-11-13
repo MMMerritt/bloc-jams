@@ -30,6 +30,22 @@
      ]
  };
 
+ // A Third Example Album
+ var albumKate = {
+     title: 'Hounds of Love',
+     artist: 'Kate Bush',
+     label: 'EMI Records',
+     year: '1985',
+     albumArtUrl: 'assets/images/album_covers/20.png',
+     songs: [
+         { title: 'Running Up That Hill (A Deal with God)', duration: '5:03' },
+         { title: 'Hounds of Love', duration: '3:02' },
+         { title: 'The Big Sky', duration: '4:41'},
+         { title: 'Mother Stands for Comfort', duration: '3:07' },
+         { title: 'Cloudbusting', duration: '5:10'}
+     ]
+ };
+
  var createSongRow = function(songNumber, songName, songLength) {
      var template =
         '<tr class="album-view-song-item">'
@@ -42,13 +58,20 @@
      return template;
  };
 
+ var albumTitle = document.getElementsByClassName('album-view-title')[0];
+ var albumArtist = document.getElementsByClassName('album-view-artist')[0];
+ var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
+ var albumImage = document.getElementsByClassName('album-cover-art')[0];
+ var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+
  var setCurrentAlbum = function(album) {
-     // #1
+     /*
      var albumTitle = document.getElementsByClassName('album-view-title')[0];
      var albumArtist = document.getElementsByClassName('album-view-artist')[0];
      var albumReleaseInfo = document.getElementsByClassName('album-view-release-info')[0];
      var albumImage = document.getElementsByClassName('album-cover-art')[0];
      var albumSongList = document.getElementsByClassName('album-view-song-list')[0];
+     */
 
      // #2
      albumTitle.firstChild.nodeValue = album.title;
@@ -65,6 +88,19 @@
      }
  };
 
+
+
  window.onload = function() {
      setCurrentAlbum(albumPicasso);
+
+     var albums = [albumPicasso, albumMarconi, albumKate];
+     var x = 0;
+
+     albumImage.addEventListener("click", function(event) {
+       setCurrentAlbum(albums[x]);
+       x++;
+       if (x === albums.length) {
+         x = 0;
+       }
+     });
  };
