@@ -36,7 +36,7 @@
      artist: 'Kate Bush',
      label: 'EMI Records',
      year: '1985',
-     albumArtUrl: 'assets/images/album_covers/20.png',
+     albumArtUrl: 'assets/images/album_covers/02.png',
      songs: [
          { title: 'Running Up That Hill (A Deal with God)', duration: '5:03' },
          { title: 'Hounds of Love', duration: '3:02' },
