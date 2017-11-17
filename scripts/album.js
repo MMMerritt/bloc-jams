@@ -154,14 +154,4 @@ var trackIndex = function(album, song) {
      $previousButton.click(previousSong);
      $nextButton.click(nextSong);
 
-     var albums = [albumPicasso, albumMarconi, albumKate];
-     var index = 1;
-
-     albumImage.addEventListener("click", function(event) {
-       setCurrentAlbum(albums[index]);
-       index++;
-       if (index === albums.length) {
-         index = 0;
-       }
-     });
  });
